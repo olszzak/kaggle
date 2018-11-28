@@ -13,8 +13,17 @@ services:
       - datanett
   restaurant:
     build:
-      context: ./pol
+      context: ./res
       dockerfile: Dockerfile-res
+    networks:
+      - datanett
+    tmpfs:
+      - /run
+      - /var/cache
+  police:
+    build:
+      context: ./pol
+      dockerfile: Dockerfile-pol
     networks:
       - datanett
     tmpfs:
@@ -23,7 +32,7 @@ services:
   web:
     build:
       context: ./web
-      docerfile: Dockerfile-web
+      dockerfile: Dockerfile-web
     networks:
       - datanett
 
