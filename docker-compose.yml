@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  db:
+    image: postgres
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: 'user'
+      POSTGRES_PASSWORD: 'user'
+      POSTGRES_DB: 'tabela'
+    networks:
+      - datanett
+  restaurant:
+    build:
+      context: ./pol
+      dockerfile: Dockerfile-res
+    networks:
+      - datanett
+    tmpfs:
+      - /run
+      - /var/cache
+  web:
+    build:
+      context: ./web
+      docerfile: Dockerfile-web
+    networks:
+      - datanett
+
+networks:
+  datanett:

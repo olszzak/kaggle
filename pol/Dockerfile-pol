@@ -1,0 +1,20 @@
+FROM ubuntu
+
+RUN apt-get update
+RUN apt-get install -y python3
+RUN apt-get install -y python3-pip
+RUN apt-get install unzip
+RUN apt-get install nano
+
+RUN mkdir ~/.kaggle
+RUN echo '{"username":"lumbaq","key":"05822be12bb26c1c63016f33dc065dbd"}' >> ~/.kaggle/kaggle.json
+
+RUN pip3 install kaggle
+RUN kaggle datasets download -d san-francisco/sf-police-calls-for-service-and-incidents
+
+RUN mkdir data
+RUN unzip sf-police-calls-for-service-and-incidents.zip -d data
+
+RUN pip3 install pandas
+RUN pip3 install psycopg2
+RUN pip3 install sqlalchemy
