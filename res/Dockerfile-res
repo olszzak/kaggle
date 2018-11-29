@@ -18,3 +18,5 @@ RUN unzip sf-restaurant-scores-lives-standard.zip -d data
 RUN pip3 install pandas
 RUN pip3 install psycopg2
 RUN pip3 install sqlalchemy
+
+CMD ['python', 'app.py']
