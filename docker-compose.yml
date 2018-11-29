@@ -23,6 +23,7 @@ services:
     tmpfs:
       - /run
       - /var/cache
+    command: ['wait-for-it.sh', 'db:5432', '--', 'python3', 'app.py']
   police:
     depends_on:
     - db
