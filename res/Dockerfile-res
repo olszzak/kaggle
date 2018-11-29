@@ -21,4 +21,5 @@ RUN pip3 install sqlalchemy
 
 ADD app.py ./
 ADD wait-for-it.sh ./
-#CMD ['wait-for-it.sh', 'db:5432', '--', 'python3', 'app.py']
+CMD ['ls', '-a']
+CMD ['wait-for-it.sh', 'db:5432', '--', 'python3', 'app.py']
