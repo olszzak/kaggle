@@ -23,7 +23,8 @@ services:
     tmpfs:
       - /run
       - /var/cache
-    command: sh -c './wait-for-it db:5432 -- python3 app.py'
+    command: ["./wait-for-postgres.sh", "db", "python3", "app.py"]
+#    command: sh -c './wait-for-it db:5432 -- python3 app.py'
   police:
     depends_on:
     - db
