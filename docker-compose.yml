@@ -13,6 +13,8 @@ services:
     networks:
       - datanett
   restaurant:
+    depends_on:
+      - db
     build:
       context: ./res
       dockerfile: Dockerfile-res
