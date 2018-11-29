@@ -19,4 +19,4 @@ RUN pip3 install pandas
 RUN pip3 install psycopg2
 RUN pip3 install sqlalchemy
 
-CMD ['python3', 'app.py']
+CMD ['python3', './app.py']
