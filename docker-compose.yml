@@ -3,7 +3,7 @@ version: "3"
 services:
   db:
     image: postgres
-    container_name: kaggle_db
+    container_name: db
     ports:
       - '5432:5432'
     environment:
@@ -23,6 +23,7 @@ services:
     tmpfs:
       - /run
       - /var/cache
+    command: ['wait-for-it.sh', 'db:5432', '--', 'python3', 'app.py']
   police:
     depends_on:
     - db
