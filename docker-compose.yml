@@ -24,6 +24,8 @@ services:
       - /run
       - /var/cache
   police:
+    depends_on:
+    - db
     build:
       context: ./pol
       dockerfile: Dockerfile-pol
@@ -33,6 +35,8 @@ services:
       - /run
       - /var/cache
   web:
+    depends_on:
+    - db
     build:
       context: ./web
       dockerfile: Dockerfile-web
