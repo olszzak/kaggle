@@ -19,4 +19,6 @@ RUN pip3 install pandas
 RUN pip3 install psycopg2
 RUN pip3 install sqlalchemy
 
-CMD ['python3', './app.py']
+ADD app.py ./
+ADD wait-for-it.sh ./
+CMD ['wait-for-it.sh', 'kaggle_db:5432', '--', 'python3', 'app.py']
