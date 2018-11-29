@@ -3,6 +3,7 @@ version: "3"
 services:
   db:
     image: postgres
+    container_name: kaggle_db
     ports:
       - '5432:5432'
     environment:
