@@ -21,3 +21,4 @@ RUN pip3 install sqlalchemy
 
 ADD app.py ./
 ADD wait-for-postgres.sh ./
+RUN chmod 777 wait-for-postgres.sh
