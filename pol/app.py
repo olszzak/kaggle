@@ -10,7 +10,8 @@ while not db:
         engine = sqlalchemy.create_engine('postgresql://user:user@db/tabela')
         con = engine.connect()
         df.to_sql('police_incidents', con, if_exists='append', chunksize=1000)
-    except:
+    except Exception as e:
+        print(str(e))
         db = False
     else:
         db = True
