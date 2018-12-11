@@ -18,3 +18,5 @@ RUN unzip sf-police-calls-for-service-and-incidents.zip -d data
 RUN pip3 install pandas
 RUN pip3 install psycopg2
 RUN pip3 install sqlalchemy
+
+ADD app.py ./
