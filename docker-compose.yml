@@ -41,6 +41,7 @@ services:
       - db
     ports:
       - '8000:8000'
+      - '8001:8001'
     build:
       context: ./web
       dockerfile: Dockerfile-web
