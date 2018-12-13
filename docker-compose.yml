@@ -40,14 +40,14 @@ services:
     depends_on:
       - db
     ports:
-      - '8000:8000'
+      - '8000:8080'
       - '8001:8001'
     build:
       context: ./web
       dockerfile: Dockerfile-web
     networks:
       - datanett
-    command: ["adev", "runserver", "--port", "8000"]
+    command: ["adev", "runserver", "--port", "8080"]
 
 networks:
   datanett:
