@@ -40,8 +40,8 @@ services:
     depends_on:
       - db
     ports:
-      - '8888:5000'
-      - '8889:5001'
+      - '8888:8000'
+      - '8889:8001'
     build:
       context: ./web
       dockerfile: Dockerfile-web
