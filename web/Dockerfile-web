@@ -10,5 +10,5 @@ RUN pip3 install aiohttp-devtools
 RUN adev start .
 RUN pip3 install -r requirements.txt
 
-EXPORT AIO_APP_PATH="app/"
-EXPORT AIO_STATIC_PATH="static/"
+ENV AIO_APP_PATH="app/"
+ENV AIO_STATIC_PATH="static/"
