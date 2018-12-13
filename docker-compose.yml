@@ -41,6 +41,7 @@ services:
       - db
     ports:
       - '8888:5000'
+      - '8889:5001'
     build:
       context: ./web
       dockerfile: Dockerfile-web
