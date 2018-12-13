@@ -24,18 +24,18 @@ services:
       - /run
       - /var/cache
     command: ["python3", "app.py"]
-  police:
-    depends_on:
-    - db
-    build:
-      context: ./pol
-      dockerfile: Dockerfile-pol
-    networks:
-      - datanett
-    tmpfs:
-      - /run
-      - /var/cache
-    command: ["python3", "app.py"]
+#  police:
+#    depends_on:
+#    - db
+#    build:
+#      context: ./pol
+#      dockerfile: Dockerfile-pol
+#    networks:
+#      - datanett
+#    tmpfs:
+#      - /run
+#      - /var/cache
+#    command: ["python3", "app.py"]
   web:
     depends_on:
     - db
