@@ -44,6 +44,7 @@ services:
       dockerfile: Dockerfile-web
     networks:
       - datanett
+    command: ["adev", "runserver"]
 
 networks:
   datanett:
