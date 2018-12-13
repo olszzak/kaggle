@@ -5,9 +5,6 @@ RUN apt-get update
 ADD requirements_dev.txt ./
 ADD entry.sh ./
 RUN pip install -r requirements_dev.txt
-ENTRYPOINT ["bash", "entry.sh"]
-
-ENV AIO_APP_PATH="app/"
-ENV AIO_STATIC_PATH="static/"
+ENTRYPOINT ["entry.sh"]
 
 EXPOSE 8000
