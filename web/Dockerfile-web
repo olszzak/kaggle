@@ -15,3 +15,5 @@ RUN pip3 install -r requirements.txt
 
 ENV AIO_APP_PATH="app/"
 ENV AIO_STATIC_PATH="static/"
+
+EXPOSE 8000
