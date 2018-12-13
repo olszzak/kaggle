@@ -39,12 +39,14 @@ services:
   web:
     depends_on:
       - db
+    ports:
+      - '8888:5000'
     build:
       context: ./web
       dockerfile: Dockerfile-web
     networks:
       - datanett
-    command: ["adev", "runserver", "--port", "8080"]
+    command: ["adev", "runserver", "--port", "5000"]
 
 networks:
   datanett:
