@@ -14,3 +14,4 @@ while not db:
         db = False
     else:
         db = True
+        con.close()
