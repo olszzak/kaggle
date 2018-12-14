@@ -1,5 +1,18 @@
-FROM python:3.7
-WORKDIR /app
-ADD requirements_dev.txt /app/
-RUN pip install -r requirements_dev.txt
-ENTRYPOINT ["bash", "entry.sh"]
+FROM ubuntu
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip
+RUN pip3 install aiohttp-devtools
+RUN pip3 install psycopg2-binary
+
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8
+
+RUN adev start . --template-engine jinja --session secure --database none --example none
+RUN pip3 install -r requirements.txt
+
+ENV AIO_APP_PATH="app/"
+ENV AIO_STATIC_PATH="static/"
+
+EXPOSE 8000
+EXPOSE 8001

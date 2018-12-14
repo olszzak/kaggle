@@ -24,30 +24,18 @@ services:
       - /run
       - /var/cache
     command: ["python3", "app.py"]
-#  police:
-#    depends_on:
-#    - db
-#    build:
-#      context: ./pol
-#      dockerfile: Dockerfile-pol
-#    networks:
-#      - datanett
-#    tmpfs:
-#      - /run
-#      - /var/cache
-#    command: ["python3", "app.py"]
   web:
     depends_on:
       - db
     ports:
-      - '8888:8000'
-      - '8889:8001'
+      - '8001:8001'
+      - '8000:8000'
     build:
       context: ./web
       dockerfile: Dockerfile-web
     networks:
       - datanett
-    command: ["adev", "runserver", "--port", "8000"]
+    command: ["adev", "runserver"]
 
 networks:
   datanett:
